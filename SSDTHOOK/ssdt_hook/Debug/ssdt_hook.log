@@ -1,0 +1,9 @@
+﻿  Building 'ssdt_hook' with toolset 'WindowsKernelModeDriver10.0' and the 'Desktop' target platform.
+  Source.c
+  ssdt_hook.vcxproj -> C:\Users\j\documents\visual studio 2015\Projects\ssdt_hook\Debug\ssdt_hook.sys
+  ssdt_hook.vcxproj -> C:\Users\j\documents\visual studio 2015\Projects\ssdt_hook\Debug\ssdt_hook.pdb (Full PDB)
+  Done Adding Additional Store
+  Successfully signed: C:\Users\j\documents\visual studio 2015\Projects\ssdt_hook\Debug\ssdt_hook.sys
+  
+  Inf2Cat task was skipped as there were no inf files to process
+  

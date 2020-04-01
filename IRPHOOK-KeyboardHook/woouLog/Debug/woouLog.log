@@ -1,0 +1,6 @@
+﻿  Building 'woouLog' with toolset 'WindowsKernelModeDriver10.0' and the 'Desktop' target platform.
+  Source.c
+  woouLog.vcxproj -> C:\Users\j\documents\visual studio 2015\Projects\woouLog\Debug\woouLog.sys
+  woouLog.vcxproj -> C:\Users\j\documents\visual studio 2015\Projects\woouLog\Debug\woouLog.pdb (Full PDB)
+  Inf2Cat task was skipped as there were no inf files to process
+  
