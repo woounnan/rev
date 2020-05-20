@@ -1,7 +1,9 @@
 ; tiny.asm
 BITS 32
-GLOBAL main
+GLOBAL _start
 SECTION .text
-main:
-              mov     eax, 42
-              ret
+_start:
+              xor     eax, eax
+	      inc     eax
+              mov     bl, 42  
+              int     0x80
