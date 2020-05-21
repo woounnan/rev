@@ -1,11 +1,16 @@
-; tiny.asm
-BITS 32
+  ; tiny.asm
+  
+  BITS 32
   
                 org     0x08048000
   
   ehdr:                                                 ; Elf32_Ehdr
-                db      0x7F, "ELF", 1, 1, 1, 0         ;   e_ident
-        times 8 db      0
+                db      0x7F, "ELF"                     ;   e_ident
+                db      1, 1, 1, 0, 0
+  _start:       mov     bl, 42
+                xor     eax, eax
+                inc     eax
+                int     0x80
                 dw      2                               ;   e_type
                 dw      3                               ;   e_machine
                 dd      1                               ;   e_version
@@ -34,10 +39,4 @@ BITS 32
   
   phdrsize      equ     $ - phdr
   
-  _start:
-                mov     bl, 42
-                xor     eax, eax
-                inc     eax
-                int     0x80
-                
   filesize      equ     $ - $$
