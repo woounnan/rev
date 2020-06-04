@@ -1,1 +1,1 @@
-개발 관련된 내용
+development && reversing
