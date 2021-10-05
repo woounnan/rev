@@ -1,40 +1,30 @@
 from time import time
 from itertools import permutations
+from collections import Counter
 
-def swap(s, src, dst):
-    s = list(s)
-    tp = s[src]
-    s[src] = s[dst]
-    s[dst] = tp
-    return ''.join(s)
-def permutation(s, start, end):
-    global l
-    for idx, ele in enumerate(s[start:], start=start):  
-        '''
-        #Permutation with repetition
-        if start is not idx and s[start] is s[idx]:
-            continue
-        '''
-        s = swap(s, start, idx)
-        l += 1
-        #print(s[:start+1])
-        permutation(s, start+1, end)
-        s = swap(s, start, idx)
 def solution(numbers):
-    permutation(numbers, 0, len(numbers)-1)
+    _max = int(''.join(sorted(numbers, reverse=True)))
+    check = [True] * _max
+    primes = []
 
+    for i in range(2, _max+1):
+        if check[i-1] is True:
+           primes.append(str(i)) 
+           for n in range(i, _max+1, i):
+               check[n-1] = False
 
-l = 0
-numbers = 'aab'
-start = time()
-permutation(numbers, 0, len(numbers)-1)
-print('[*] Running Time : ', time() - start, 's')
-print('[*] length of permutations : ', l)
+    c_n = Counter(numbers) 
 
-l = 0
-start = time()
-for i in range(1, len(numbers)+1):
-    permute = list(permutations(numbers, i))
-    l += len(permute)
-print('[*] Running Time : ', time() - start, 's')
-print('[*] length of permutations : ', l)
+    l = 0
+    for prime in primes:
+        c_p = Counter(prime)
+        c = 0
+        for k in c_p.keys():
+            if c_n[k] and (c_n[k] - c_p[k]) >= 0:
+                c += 1        
+        if c == len(c_p.keys()):
+            l += 1
+    return l
+
+numbers = '011'
+solution(numbers)
